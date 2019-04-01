@@ -1,0 +1,55 @@
+<body>
+<dx-data-grid
+  [dataSource]="messages"
+  [showBorders]="true"
+  [showRowLines]="true"
+  [showColumnLines]="false"
+  [allowColumnReordering]="true"
+  [allowColumnResizing]="true"
+  [hoverStateEnabled]="true">
+    <dxi-column caption="" cellTemplate="urgentCellTemplate" width="50"></dxi-column>
+    <dxi-column caption="Clinic" dataField="clinic" width="100"></dxi-column>
+    <dxi-column caption="Patient Name" cellTemplate="patNameCellTemplate" width="120"></dxi-column>
+    <dxi-column caption="Date of Visit" cellTemplate="dateOfVisitTemplate" width="100"></dxi-column>
+    <dxi-column caption="Provider" cellTemplate="providerCellTemplate" width="150"></dxi-column>
+    <dxi-column caption="Message" cellTemplate="messageCellTemplate" width="400"></dxi-column>
+    <dxi-column caption="" dataField="dateCreated" align="right" width="80"></dxi-column>
+    <dxi-column caption="" cellTemplate="dividerCellTemplate" width="15"></dxi-column>
+    <dxi-column caption="" cellTemplate="buttonsCellTemplate" width="50"></dxi-column>
+    <div *dxTemplate="let d of 'patNameCellTemplate'">
+      <div>{{d.data.patName}}</div>
+      <div>#{{d.data.patNum}}</div>
+    </div>
+    <div *dxTemplate="let d of 'providerCellTemplate'">
+      <div>{{d.data.provider}}</div>
+      <div>#{{d.data.providerNum}}</div>
+    </div>
+    <div *dxTemplate="let d of 'messageCellTemplate'">
+      <div>From: {{d.data.createdBy}}</div>
+      <div>{{d.data.subject}}</div>
+      <div>{{d.data.messageText}}</div>
+    </div>
+    <div *dxTemplate="let d of 'dividerCellTemplate'">
+      <div class="divider"></div>
+    </div>
+    <div *dxTemplate="let d of 'urgentCellTemplate'">
+      <img class="warning-format" [src]="[(d.data.urgent)]=='true' ? 'images/warning.png' : ''"/>
+    </div>
+    <div *dxTemplate="let d of 'buttonsCellTemplate'">
+      <img class="arrow-check-format" src="images/arrow-black.png" />
+      <img class="arrow-check-format" src="images/check-mark-hollow.png" />
+    </div>
+    <div *dxTemplate="let d of 'dateOfVisitTemplate'">
+      <div class="visit-date-format">{{d.data.dateOfVisit}}</div>
+      <!--<dx-popover
+        target="#link1" 
+        position="top"
+        [width]="300"
+        [(visible)]="defaultVisible">
+        <div *dxTemplate="let data = model of 'content'">
+          Ben was here
+        </div>
+      </dx-popover>-->
+    </div>
+  </dx-data-grid>
+</body>
