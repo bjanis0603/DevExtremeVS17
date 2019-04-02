@@ -64,7 +64,7 @@ let menu: Category[] = [
     items: []
   }, {
     id: 5,
-    name: "Work QUeue",
+    name: "Work Queue",
     urgent: 2,
     total: 3,
     items: [
