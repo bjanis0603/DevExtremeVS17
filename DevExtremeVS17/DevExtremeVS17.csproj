@@ -25,11 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\dashboard-menu\dashboard-menu.component.ts" />
+    <None Remove="ClientApp\src\app\dashboard-menu\dashboard-menu.service.ts" />
     <None Remove="ClientApp\src\app\dxgrid\dxgrid.component.ts" />
     <None Remove="ClientApp\src\app\dxgrid\dxgrid.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\dashboard-menu\dashboard-menu.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\dashboard-menu\dashboard-menu.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\dxgrid\dxgrid.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\dxgrid\dxgrid.service.ts" />
   </ItemGroup>
